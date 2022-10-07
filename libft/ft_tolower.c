@@ -1,26 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_tolower.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abarriga <abarriga@student.42malaga.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/07 10:03:37 by abarriga          #+#    #+#             */
-/*   Updated: 2022/10/07 19:15:01 by abarriga         ###   ########.fr       */
+/*   Created: 2022/09/22 18:20:41 by abarriga          #+#    #+#             */
+/*   Updated: 2022/09/23 18:18:44 by abarriga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"ft_printf.h"
-
-size_t	ft_strlen(const char *s)
+int	ft_tolower(int c)
 {
-	size_t	len;
-
-	len = 0;
-	while(*s != 0)
+	if (c >= 'A' && c <= 'Z')
 	{
-		len++;
-		s++;
+		c = c + 32;
 	}
-	return (len);
+	return (c);
 }

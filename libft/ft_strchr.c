@@ -1,26 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abarriga <abarriga@student.42malaga.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/07 10:03:37 by abarriga          #+#    #+#             */
-/*   Updated: 2022/10/07 19:15:01 by abarriga         ###   ########.fr       */
+/*   Created: 2022/09/22 19:59:12 by abarriga          #+#    #+#             */
+/*   Updated: 2022/09/24 13:30:29 by abarriga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"ft_printf.h"
-
-size_t	ft_strlen(const char *s)
+char	*ft_strchr(const char *s, int c)
 {
-	size_t	len;
+	int	i;
 
-	len = 0;
-	while(*s != 0)
+	i = 0;
+	while (s[i] != '\0')
 	{
-		len++;
-		s++;
+		if (s[i] == (char) c)
+			return ((char *)s + i);
+		i++;
 	}
-	return (len);
+	if ((char)c == '\0')
+		return ((char *)s + i);
+	return (0);
 }

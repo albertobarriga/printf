@@ -1,26 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abarriga <abarriga@student.42malaga.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/07 10:03:37 by abarriga          #+#    #+#             */
-/*   Updated: 2022/10/07 19:15:01 by abarriga         ###   ########.fr       */
+/*   Created: 2022/09/28 16:08:52 by abarriga          #+#    #+#             */
+/*   Updated: 2022/09/28 16:22:54 by abarriga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include<unistd.h>
 
-#include"ft_printf.h"
-
-size_t	ft_strlen(const char *s)
+void	ft_putstr_fd(char *s, int fd)
 {
-	size_t	len;
+	int	i;
 
-	len = 0;
-	while(*s != 0)
+	i = 0;
+	while (s[i])
 	{
-		len++;
-		s++;
+		write(fd, &s[i], 1);
+		i++;
 	}
-	return (len);
 }

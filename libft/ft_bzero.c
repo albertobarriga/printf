@@ -1,26 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abarriga <abarriga@student.42malaga.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/07 10:03:37 by abarriga          #+#    #+#             */
-/*   Updated: 2022/10/07 19:15:01 by abarriga         ###   ########.fr       */
+/*   Created: 2022/09/21 11:14:14 by abarriga          #+#    #+#             */
+/*   Updated: 2022/09/23 19:48:13 by abarriga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"ft_printf.h"
+#include<stdio.h>
 
-size_t	ft_strlen(const char *s)
+void	*ft_bzero(void *s, size_t n)
 {
-	size_t	len;
+	unsigned char	*ptr;
 
-	len = 0;
-	while(*s != 0)
+	ptr = (unsigned char *)s;
+	while (n > 0)
 	{
-		len++;
-		s++;
+		*(ptr++) = 0;
+		n--;
 	}
-	return (len);
+	return (s);
 }

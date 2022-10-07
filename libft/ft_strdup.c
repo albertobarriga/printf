@@ -1,26 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abarriga <abarriga@student.42malaga.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/07 10:03:37 by abarriga          #+#    #+#             */
-/*   Updated: 2022/10/07 19:15:01 by abarriga         ###   ########.fr       */
+/*   Created: 2022/09/26 11:25:31 by abarriga          #+#    #+#             */
+/*   Updated: 2022/09/26 11:43:49 by abarriga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include<stdlib.h>
+#include"libft.h"
+#include<stdio.h>
 
-#include"ft_printf.h"
-
-size_t	ft_strlen(const char *s)
+char	*ft_strdup(const char *s1)
 {
-	size_t	len;
+	char	*a;
+	int		i;
+	size_t	size;
+	size_t	count;
 
-	len = 0;
-	while(*s != 0)
+	i = 0;
+	size = ft_strlen (s1);
+	count = sizeof(char);
+	a = (char *)malloc(count * size + 1);
+	if (!a)
+		return (0);
+	while (s1[i])
 	{
-		len++;
-		s++;
+		a[i] = s1[i];
+		i++;
 	}
-	return (len);
+	a[i] = '\0';
+	return (a);
 }

@@ -1,26 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abarriga <abarriga@student.42malaga.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/07 10:03:37 by abarriga          #+#    #+#             */
-/*   Updated: 2022/10/07 19:15:01 by abarriga         ###   ########.fr       */
+/*   Created: 2022/09/23 12:58:40 by abarriga          #+#    #+#             */
+/*   Updated: 2022/09/24 18:01:17 by abarriga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include <stdio.h>
 
-#include"ft_printf.h"
-
-size_t	ft_strlen(const char *s)
+void	*ft_memchr(const void *s, int c, size_t n)
 {
-	size_t	len;
+	size_t	i;
+	char	*ptr;
 
-	len = 0;
-	while(*s != 0)
+	i = 0;
+	ptr = (char *)s;
+	while (i < n)
 	{
-		len++;
-		s++;
+		if (ptr[i] == (char) c)
+			return (ptr + i);
+		i++;
 	}
-	return (len);
+	return (0);
 }

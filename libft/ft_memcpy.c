@@ -1,26 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abarriga <abarriga@student.42malaga.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/07 10:03:37 by abarriga          #+#    #+#             */
-/*   Updated: 2022/10/07 19:15:01 by abarriga         ###   ########.fr       */
+/*   Created: 2022/09/21 12:14:40 by abarriga          #+#    #+#             */
+/*   Updated: 2022/09/24 13:18:07 by abarriga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"ft_printf.h"
+#include "stdio.h"
 
-size_t	ft_strlen(const char *s)
+void	*ft_memcpy(void	*dst, const void *src, size_t n)
 {
-	size_t	len;
+	unsigned char			*ptr1;
+	const unsigned char		*ptr2;
 
-	len = 0;
-	while(*s != 0)
+	if (!dst && !src)
+		return (NULL);
+	ptr1 = (unsigned char *)dst;
+	ptr2 = (unsigned char *)src;
+	while (n > 0)
 	{
-		len++;
-		s++;
+		*(ptr1++) = *(ptr2++);
+		n--;
 	}
-	return (len);
+	return (dst);
 }

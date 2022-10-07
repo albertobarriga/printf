@@ -1,26 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_isprint.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abarriga <abarriga@student.42malaga.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/07 10:03:37 by abarriga          #+#    #+#             */
-/*   Updated: 2022/10/07 19:15:01 by abarriga         ###   ########.fr       */
+/*   Created: 2022/09/20 18:33:03 by abarriga          #+#    #+#             */
+/*   Updated: 2022/09/23 17:36:17 by abarriga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"ft_printf.h"
+#include<stdio.h>
+#include<ctype.h>
 
-size_t	ft_strlen(const char *s)
+int	ft_isprint(int c)
 {
-	size_t	len;
-
-	len = 0;
-	while(*s != 0)
-	{
-		len++;
-		s++;
-	}
-	return (len);
+	if (c >= 32 && c <= 126)
+		return (1);
+	else
+		return (0);
 }

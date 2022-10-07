@@ -1,26 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_lstclear_bonus.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abarriga <abarriga@student.42malaga.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/07 10:03:37 by abarriga          #+#    #+#             */
-/*   Updated: 2022/10/07 19:15:01 by abarriga         ###   ########.fr       */
+/*   Created: 2022/09/30 11:25:06 by abarriga          #+#    #+#             */
+/*   Updated: 2022/09/30 12:00:51 by abarriga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include"libft.h"
 
-#include"ft_printf.h"
-
-size_t	ft_strlen(const char *s)
+void	ft_lstclear(t_list	**lst, void (*del)(void*))
 {
-	size_t	len;
+	t_list	*node;
 
-	len = 0;
-	while(*s != 0)
+	while (*lst)
 	{
-		len++;
-		s++;
+		node = (*lst)->next;
+		ft_lstdelone(*lst, del);
+		*lst = node;
 	}
-	return (len);
 }

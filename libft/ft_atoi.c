@@ -1,26 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abarriga <abarriga@student.42malaga.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/07 10:03:37 by abarriga          #+#    #+#             */
-/*   Updated: 2022/10/07 19:15:01 by abarriga         ###   ########.fr       */
+/*   Created: 2022/08/28 13:36:42 by abarriga          #+#    #+#             */
+/*   Updated: 2022/09/24 17:44:25 by abarriga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"ft_printf.h"
-
-size_t	ft_strlen(const char *s)
+int	ft_atoi(const char *str)
 {
-	size_t	len;
+	int	s;
+	int	res;
+	int	i;
 
-	len = 0;
-	while(*s != 0)
+	s = 1;
+	res = 0;
+	i = 0;
+	while (str[i] == ' ' || (str[i] >= 9 && str[i] <= 13))
+		i++;
+	if (str[i] == '+' || str[i] == '-')
 	{
-		len++;
-		s++;
+		if (str[i] == '-')
+			s = s * (-1);
+		i++;
 	}
-	return (len);
+	while (str[i] >= '0' && str[i] <= '9' && str[i] != '\0')
+	{
+		res = res * 10 + str[i] - '0';
+		i++;
+	}
+	res = res * s;
+	return (res);
 }

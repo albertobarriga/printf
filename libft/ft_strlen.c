@@ -5,22 +5,20 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: abarriga <abarriga@student.42malaga.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/07 10:03:37 by abarriga          #+#    #+#             */
-/*   Updated: 2022/10/07 19:15:01 by abarriga         ###   ########.fr       */
+/*   Created: 2022/08/18 10:28:15 by abarriga          #+#    #+#             */
+/*   Updated: 2022/09/20 19:11:09 by abarriga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include"ft_printf.h"
+#include<unistd.h>
 
 size_t	ft_strlen(const char *s)
 {
-	size_t	len;
+	size_t	i;
 
-	len = 0;
-	while(*s != 0)
+	i = 0;
+	while (s[i] != '\0')
 	{
-		len++;
-		s++;
+		i++;
 	}
-	return (len);
+	return (i);
 }

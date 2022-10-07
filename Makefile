@@ -1,4 +1,4 @@
-SRCS =	
+SRCS = ft_printf.c ft_putchar.c ft_puthexa.c ft_putnbr.c ft_putnbr_uns.c ft_putstr.c ft_strlen.c\
 		
 OBJ =  ${SRCS:.c=.o}
 
@@ -8,9 +8,9 @@ CFLAGS = -Wall -Wextra -Werror
 
 RM = 	rm -f
 
-NAME = ftprintf.a
+NAME = libftprintf.a
 
-HEAD = ftprintf.h
+HEAD = ft_printf.h
 
 %.o: %.c $(HEAD)
 	$(CC) $(CFLAGS) -c $< -o $@
@@ -29,8 +29,8 @@ cleanlib:
 	@(make fclean -C libft)
 
 fclean:	clean
-	${RM} ${NAME} $
-	$(RM} libft.a $
+	${RM} ${NAME}
+	${RM} libft.a
 	${RM} a.out
 
 re:	fclean all

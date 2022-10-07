@@ -6,7 +6,7 @@
 /*   By: abarriga <abarriga@student.42malaga.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/07 12:28:45 by abarriga          #+#    #+#             */
-/*   Updated: 2022/10/07 18:44:15 by abarriga         ###   ########.fr       */
+/*   Updated: 2022/10/07 19:37:55 by abarriga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "ft_printf.h"
@@ -16,8 +16,8 @@ static unsigned int	ft_conversions(char c, va_list args)
 	unsigned int	len;
 
 	len = 0;
-	if (c  ==  'c')
-		len = ft_putchar(va_arg(args,  int));
+	if (c == 'c')
+		len = ft_putchar(va_arg(args, int));
 	else if (c == 's')
 		len = ft_putstr(va_arg(args, char *));
 	else if (c == 'p')
@@ -32,7 +32,7 @@ static unsigned int	ft_conversions(char c, va_list args)
 	else if (c == 'x')
 		len = ft_puthexa("0123456789abcdef", va_arg(args, unsigned long));
 	else if (c == 'X')
-		len = ft_puthexa("0123456789ABCDEF", va_arg(args, unsigned long));	
+		len = ft_puthexa("0123456789ABCDEF", va_arg(args, unsigned long));
 	else if (c == '%')
 		len = ft_putchar('%');
 	return (len);
@@ -56,5 +56,4 @@ int	ft_printf(char const *str, ...)
 	}
 	va_end(args);
 	return (len);
-			
 }
