@@ -6,7 +6,7 @@
 /*   By: abarriga <abarriga@student.42malaga.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/07 11:39:10 by abarriga          #+#    #+#             */
-/*   Updated: 2022/10/07 12:23:29 by abarriga         ###   ########.fr       */
+/*   Updated: 2022/10/09 13:29:45 by abarriga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,6 @@ unsigned int	ft_putnbr_uns(unsigned long n)
 
 	len = 0;
 	num = n;
-	if (num < 0)
-	{
-		ft_putchar('-');
-		len++;
-		num = num * (-1);
-	}
 	if (num < 10)
 	{
 		ft_putchar(num + '0');

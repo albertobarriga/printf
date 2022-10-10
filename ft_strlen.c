@@ -6,7 +6,7 @@
 /*   By: abarriga <abarriga@student.42malaga.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/07 10:03:37 by abarriga          #+#    #+#             */
-/*   Updated: 2022/10/07 19:15:01 by abarriga         ###   ########.fr       */
+/*   Updated: 2022/10/09 13:36:33 by abarriga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ size_t	ft_strlen(const char *s)
 	size_t	len;
 
 	len = 0;
-	while(*s != 0)
+	while (*s != 0)
 	{
 		len++;
 		s++;

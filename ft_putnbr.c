@@ -6,13 +6,13 @@
 /*   By: abarriga <abarriga@student.42malaga.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/07 10:27:05 by abarriga          #+#    #+#             */
-/*   Updated: 2022/10/07 12:23:38 by abarriga         ###   ########.fr       */
+/*   Updated: 2022/10/09 13:37:48 by abarriga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-unsigned int	ft_putnbr(int	n)
+unsigned int	ft_putnbr(int n)
 {
 	long			num;
 	unsigned int	len;

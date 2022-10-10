@@ -6,12 +6,12 @@
 /*   By: abarriga <abarriga@student.42malaga.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/07 12:28:45 by abarriga          #+#    #+#             */
-/*   Updated: 2022/10/07 19:37:55 by abarriga         ###   ########.fr       */
+/*   Updated: 2022/10/09 13:35:25 by abarriga         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "ft_printf.h"
 
-static unsigned int	ft_conversions(char c, va_list args)
+static unsigned int	ft_conversions(const char c, va_list args)
 {
 	unsigned int	len;
 
@@ -23,7 +23,8 @@ static unsigned int	ft_conversions(char c, va_list args)
 	else if (c == 'p')
 	{
 		len = ft_putstr("0x");
-		len = len + ft_puthexa("0123456789abcdef", va_arg(args, unsigned long));
+		len = len + ft_puthexap("0123456789abcdef",
+				va_arg(args, unsigned long));
 	}
 	else if (c == 'd' || c == 'i')
 		len = ft_putnbr(va_arg(args, int));
@@ -47,12 +48,16 @@ int	ft_printf(char const *str, ...)
 	len = 0;
 	i = 0;
 	va_start(args, str);
-	while (str[i++])
+	while (str[i])
 	{
-		if (str[i] == '%')
-			len = len + ft_conversions(str[++i], args);
+		if (str[i] == '%' && str[i + 1])
+		{
+			len = len + ft_conversions(str[i + 1], args);
+			i++;
+		}
 		else
 			len = len + ft_putchar(str[i]);
+		i++;
 	}
 	va_end(args);
 	return (len);
